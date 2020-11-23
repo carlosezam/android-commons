@@ -2,9 +2,10 @@ package com.carlosezam.commons.android.coroutines
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainCoroutineDispatcher
 
 interface CoroutineDispatcherProvider {
-    val Main: CoroutineDispatcher
+    val Main: MainCoroutineDispatcher
     val Default: CoroutineDispatcher
     val IO: CoroutineDispatcher
     val Unconfined: CoroutineDispatcher
@@ -12,7 +13,7 @@ interface CoroutineDispatcherProvider {
 
 object DefaultDispatcherProvider : CoroutineDispatcherProvider {
 
-    override val Main: CoroutineDispatcher
+    override val Main: MainCoroutineDispatcher
         get() = Dispatchers.Main
 
     override val Default: CoroutineDispatcher
