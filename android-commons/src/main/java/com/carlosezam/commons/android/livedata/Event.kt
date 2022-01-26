@@ -1,10 +1,12 @@
 package com.carlosezam.commons.android.livedata
 
+import androidx.lifecycle.Observer
+
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
  */
 
-open class Event<out T>(private val content: T) : Serializable {
+open class Event<out T>(private val content: T)  {
 
     @Suppress("MemberVisibilityCanBePrivate")
     var hasBeenHandled = false
